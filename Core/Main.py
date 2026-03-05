@@ -1,5 +1,5 @@
-from Core.Parser import extract_node_sequence
-from Core.Similarity import sequence_similarity
+from Parser import extract_node_sequence
+from Similarity import sequence_similarity
 
 
 def read_file(filepath):
@@ -7,8 +7,8 @@ def read_file(filepath):
         return file.read()
 
 
-file1 = "Examples/sample1.py"
-file2 = "Examples/sample2.py"
+file1 = "sample1.py"
+file2 = "sample2.py"
 
 code1 = read_file(file1)
 code2 = read_file(file2)
@@ -18,4 +18,5 @@ nodes2 = extract_node_sequence(code2)
 
 score = sequence_similarity(nodes1, nodes2)
 
-print(f"Similarity Score: {score:.2f}%")
+print(f"Comparing {file1} and {file2}")
+print("Similarity Score: {:.2f}%".format(score))
